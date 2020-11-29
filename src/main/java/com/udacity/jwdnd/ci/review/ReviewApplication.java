@@ -33,4 +33,22 @@ public class ReviewApplication {
 		System.out.println("Inside the characterCount! ");
 		return message.length();
 	}
+
+	@Bean
+	public String message(){
+		System.out.println("Creating the message bean");
+		return "Hello, Spring";
+	}
+
+	@Bean
+	public String uppercaseMessage(MessageService messageService){
+		System.out.println("Creating uppercaseMessage bean");
+		return messageService.upperCase();
+	}
+
+	@Bean
+	public String lowercaseMessage(MessageService messageService){
+		System.out.println("Creating lowercaseMessage bean");
+		return messageService.lowerCase();
+	}
 }
