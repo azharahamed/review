@@ -6,5 +6,10 @@
 </head>
 <body>
     <h1 th:text="${welcomeMessage}">Hello World!</h1>
+    <form th:object="${messageForm}" th:action="@{/home}" action="#" method="GET">
+        <input th:field="*{text}" type="text">
+        <input type="submit">
+    </form>
+    <h1 th:each="msg : ${greetings}" th:text= "${msg}" th:unless="${msg.contains('Goodbye')}">Hello, homepage!</h1>
 </body>
 </html>
