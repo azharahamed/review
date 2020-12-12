@@ -29,7 +29,7 @@ public class HomeController {
     @PostMapping()
     public String highFive(MessageForm messageForm, Model model) {
         messageListService.addMessage("high five, " + messageForm.getText() + "!");
-        model.addAttribute("greetings", messageListService.getMessages());
+        model.addAttribute("chatMessages", messageListService.getMessages());
         return "home";
     }
 }
